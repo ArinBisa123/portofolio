@@ -1,0 +1,107 @@
+/* Font */
+@font-face {
+  font-family: "poppinsregular";
+  src: url("../fonts/poppins-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "amaticbold";
+  src: url("../fonts/amatic-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pacificoregular";
+  src: url("../fonts/pacifico-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  max-height: 100%;
+}
+section {
+  min-height: 500px;
+  padding-top: 5rem;
+}
+/* navigasi bar */
+.navbar-brand {
+  font-family: "pacificoregular";
+}
+.navbar-nav a {
+  font-family: "poppinsregular";
+}
+/* jumbotron */
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #e9f5db;
+  margin: 0 0 10px 0;
+}
+.jumbotron .profile-pic {
+  object-position: 0.3px 0;
+  box-shadow: 1px 1px 10px #97a97c;
+}
+.jumbotron .rounded-circle {
+  background-color: #97a97c;
+}
+.jumbotron {
+  font-family: "amaticbold";
+  font-size: 45px;
+}
+/* my works */
+.work {
+  background-color: #e9f5db;
+}
+.work hr {
+  margin: 1rem 0;
+  color: #718355;
+  border: 0;
+  opacity: 1;
+}
+.work h2 {
+  font-family: "amaticbold";
+  font-size: 45px;
+}
+.card-body {
+  font-family: "poppinsregular";
+}
+/* about */
+.about hr {
+  margin: 1rem 0;
+  color: #97a97c;
+  border: 0;
+  opacity: 1;
+}
+.about h2 {
+  font-family: "amaticbold";
+  font-size: 45px;
+}
+.about p {
+  font-family: "poppinsregular";
+}
+
+/* contact me */
+.contact h2 {
+  font-family: "amaticbold";
+  font-size: 45px;
+}
+.contact hr {
+  margin: 1rem 0;
+  color: #97a97c;
+  border: 0;
+  opacity: 1;
+}
+.contact span {
+  font-family: "poppinsregular";
+}
+.contact a {
+  color: #718355;
+}
+/* footer */
+footer {
+  font-family: "pacificoregular";
+}
+footer a {
+  font-family: "poppinsregular";
+  color: #e9f5db;
+}

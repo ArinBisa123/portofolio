@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+body {
+  background-color: #f8fcfc;
+  font-size: 18px;
+  font-family: "Dancing Script", cursive;
+  color: #0f202d;
+  margin: 50px;
+}
+/* CONTAINER*/
+.container {
+  display: grid;
+  gap: 10px;
+}
+/* HEADER*/
+.header {
+  display: grid;
+  grid-template-areas:
+    "hero hero feature-1"
+    "hero hero feature-2";
+}
+.hero {
+  grid-area: hero;
+  min-height: 300px;
+  background-image: url(img/ceyda-ciftci-Hqr8Edqlnso-unsplash.png);
+  background-size: cover;
+  padding: 50px;
+}
+/* cari hero dan apapun yg ada di dalamnya*/
+.header .hero > * {
+  display: none;
+}
+/* .hero .heading {
+  font-family: "Dancing Script", cursive;
+  font-size: 5em;
+} */
+.features {
+  background-color: black;
+  color: white;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+}
+.features.feature-1 {
+  grid-area: feature-1;
+  background-image: url(img/alex-lvrs-KnS4CDYUUoI-unsplash.png);
+  background-size: cover;
+  background-position: 0px -10px;
+}
+.feature-1 h4,
+.feature-2 h4 {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.feature-1 p,
+.feature-2 p {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+.features.feature-2 {
+  grid-area: feature-2;
+  background-image: url(img/alex-lvrs-ffQsz3EuG0U-unsplash.png);
+  background-size: cover;
+  background-position-y: -20px;
+}
+.features .class {
+  font-size: 2em;
+}
+/* NAVIGASI  */
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  /* background-color: aquamarine; */
+}
+.menu .brand h1 {
+  font-size: 1.3em;
+}
+.menu ul {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+.menu a {
+  /* dibuat block agar yang bisa dipencet itu tdak hanya tulisannya saja */
+  display: block;
+  background-color: #bdd8db;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  font-size: 1em;
+}
+.class-list li a {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.class-list li a:hover {
+  color: #73b8ec;
+}
+/* Hamburger Menu*/
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 9999;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #1c505c;
+  border-radius: 2px;
+  transition: all 1s;
+}
+.menu-toggle input {
+  position: absolute;
+  width: 37px;
+  height: 28px;
+  left: -5px;
+  top: -5px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 9999;
+}
+/* Hambuger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  /* mengubah sumbu rotasi agar tidak terletak di tengah */
+  transform-origin: 0 0;
+}
+.menu-toggle span:last-child {
+  transform-origin: 0 100%;
+}
+/* Agar si input bisa mentarget si span */
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg);
+  background-color: whitesmoke;
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+.menu-toggle input:checked ~ span:last-child {
+  transform: rotate(-45deg);
+  background-color: whitesmoke;
+}
+/* Level */
+.level-program {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 80px 0;
+}
+.level-program .level {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #003444;
+}
+.level .icon {
+  font-size: 3em;
+}
+.level h3 {
+  font-size: 1.5em;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.level p {
+  font-size: 0.8em;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+.level-program .level:hover {
+  transform: scale(1.2);
+}
+/*  GALLERY */
+.gallery {
+  margin: 80px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+  justify-content: space-around;
+}
+.gallery h2 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+/* Responsive Breakpoint */
+
+/* laptop */
+@media (max-width: 1024px) {
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+  .menu .brand {
+    display: none;
+  }
+  .header .hero > * {
+    display: block;
+    color: #f8fcfc;
+  }
+  .header .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+  .hero .heading {
+    font-family: "Dancing Script", cursive;
+    font-size: 3em;
+  }
+  .hero .sub-heading {
+    font-family: "PT Sans Narrow", sans-serif;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  .menu {
+    order: -1;
+    justify-items: end;
+  }
+  nav .class-list {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+    background-color: #1c505c;
+    transform: top(-100%);
+    transition: all 1s;
+    opacity: 0;
+    width: 100%;
+  }
+  nav ul.slide {
+    transform: top(0);
+    opacity: 1;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+/* mobile */
+@media (max-width: 600px) {
+  .header {
+    grid-template-areas:
+      "hero"
+      "feature-1" "feature-2";
+  }
+}
